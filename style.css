@@ -214,6 +214,7 @@ p {
     max-width: 900px;
     margin: 0 auto var(--spacing-sm);
     color: var(--primary-color);
+    text-align: center;
 }
 
 .sub-headline {
