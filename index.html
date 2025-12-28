@@ -1,110 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rashmi - Chronic Pain & Stress Coach</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- SECTION 1 — HERO (Above the Fold) -->
-    <header id="hero" class="hero-section">
+    <!-- 1. TOP BAR -->
+    <div class="top-bar">
+        <div class="container flex-row-center">
+            <span>⭐ Chronic Pain & Stress Coach</span>
+            <span class="separator">•</span>
+            <span>⭐ Trusted by High-Performing Professionals</span>
+        </div>
+    </div>
+
+    <!-- 2. HERO SECTION -->
+    <header id="hero" class="hero-section center-text">
         <div class="container">
-            <div class="trust-bar">
-                <span>Chronic Pain & Stress Coach</span>
-                <span class="separator">•</span>
-                <span>1-on-1 Guidance</span>
-                <span class="separator">•</span>
-                <span>Trusted by High-Performing Professionals</span>
-            </div>
-            
             <h1 class="headline">
                 Chronic Pain & Stress Are Not Slowing You Down.
-                <span class="highlight">A Broken System Is.</span>
+                <span class="highlight-alt">A Broken System Is.</span>
             </h1>
-
             <p class="sub-headline">
-                If you’re an entrepreneur or professional (35–55) dealing with back pain, neck stiffness, exhaustion, or mental overload, this page is for you.
-                <br><br>
-                <strong>Not a treatment. Not a quick fix.</strong><br>
-                A conversation to understand what’s actually happening in your body.
+                If you’re an entrepreneur or professional (35–55) dealing with back pain, neck stiffness, exhaustion, or
+                mental overload, this page is for you.
             </p>
 
-            <div class="vsl-container">
+            <!-- BIG VSL PLACEHOLDER -->
+            <div class="vsl-container large-vsl">
                 <div class="vsl-placeholder">
                     <div class="play-button">▶</div>
                     <p>🎥 Watch how high-performing professionals identify the real cause of their pain and stress.</p>
                 </div>
             </div>
 
-            <div class="cta-container">
-                <a href="#book-call" class="primary-btn">Book a Free 1:1 Clarity Call</a>
+            <!-- Sticky CTA Trigger (Mobile mainly, but good for desktop flow too) -->
+            <div class="hero-cta">
+                <a href="#book-call" class="primary-btn pulse-anim">Book a Free 1:1 Clarity Call</a>
             </div>
         </div>
     </header>
 
-    <!-- SECTION 2 — WHO THIS IS FOR -->
-    <section id="who-is-this-for" class="section dark-bg">
+    <!-- 3. PROOF / RESULTS GRID (New Section based on reference) -->
+    <section id="proof" class="section light-bg">
         <div class="container">
-            <h2 class="section-title">This Call Is Meant For You If…</h2>
-            <div class="grid-layout">
-                <div class="grid-item">
-                    <div class="icon">⚡</div>
-                    <h3>You’re successful</h3>
-                    <p>but your body feels constantly tired or tense.</p>
+            <h2 class="section-title text-center">Real Results</h2>
+            <div class="grid-layout proof-grid">
+                <!-- Placeholders for "Before/After" style results -->
+                <div class="proof-card">
+                    <div class="proof-image">Result Placeholder 1</div>
+                    <div class="proof-details">
+                        <h4>Entrepreneur, 42</h4>
+                        <p>"Pain gone after 5 years of struggle."</p>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <div class="icon">🔄</div>
-                    <h3>Pain keeps returning</h3>
-                    <p>despite treatments, therapy, or rest.</p>
+                <div class="proof-card">
+                    <div class="proof-image">Result Placeholder 2</div>
+                    <div class="proof-details">
+                        <h4>Director, 38</h4>
+                        <p>"Finally sleeping through the night."</p>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <div class="icon">💼</div>
-                    <h3>Stress follows you</h3>
-                    <p>even after work hours.</p>
+                <div class="proof-card">
+                    <div class="proof-image">Result Placeholder 3</div>
+                    <div class="proof-details">
+                        <h4>CEO, 45</h4>
+                        <p>"Mental clarity restored."</p>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <div class="icon">🔋</div>
-                    <h3>Sleep doesn’t charge you</h3>
-                    <p>you wake up feeling drained.</p>
-                </div>
-                <div class="grid-item full-width">
-                    <div class="icon">📉</div>
-                    <h3>You feel your health quietly limiting your performance.</h3>
-                </div>
-            </div>
-            <p class="emphasis-text center-text">
-                You’re not looking for motivation. <br>
-                <strong>You’re looking for answers.</strong>
-            </p>
-        </div>
-    </section>
-
-    <!-- SECTION 3 — THE REAL PROBLEM -->
-    <section id="real-problem" class="section light-bg">
-        <div class="container text-center">
-            <h2 class="section-title">Your Body Isn’t Weak.<br><span class="highlight-alt">It’s Overloaded.</span></h2>
-            <div class="content-block">
-                <p>Chronic pain and stress don’t appear randomly.</p>
-                <p>They build up from:</p>
-                <ul class="styled-list inline-list">
-                    <li>Years of high-pressure routines</li>
-                    <li>Poor recovery under stress</li>
-                    <li>Emotional load that never gets released</li>
-                    <li>A nervous system that never fully switches off</li>
-                </ul>
-                <p class="mt-4">That’s why temporary solutions don’t last.</p>
-                <p class="emphasis-text">You don’t need another fix. <strong>You need clarity.</strong></p>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4 — MEET YOUR COACH -->
-    <section id="meet-coach" class="section split-layout">
+    <!-- 4. MEET YOUR COACH -->
+    <section id="meet-coach" class="section split-layout dark-bg text-light">
         <div class="container flex-row">
             <div class="image-col">
                 <div class="coach-image-placeholder">
@@ -113,100 +92,164 @@
             </div>
             <div class="text-col">
                 <h2 class="section-title left-align">Meet Rashmi</h2>
-                <p>Rashmi works with entrepreneurs and professionals whose ambition is strong — but whose body is carrying the cost.</p>
-                <p>She doesn’t treat symptoms. She helps clients identify the root cause of chronic pain, stress, and exhaustion and guides them through a structured healing process.</p>
-                <div class="notice-box">
-                    <p>This is not medical treatment.</p>
-                    <p>This is not yoga or therapy.</p>
-                    <p><strong>It’s root-level guidance for high-pressure lives.</strong></p>
+                <div class="bio-content">
+                    <p class="lead">Rashmi works with entrepreneurs and professionals whose ambition is strong — but
+                        whose body is carrying the cost.</p>
+                    <ul class="check-list">
+                        <li>She doesn’t treat symptoms.</li>
+                        <li>She identifies the root cause of chronic pain, stress, and exhaustion.</li>
+                        <li>She guides you through a structured healing process.</li>
+                    </ul>
+                    <div class="notice-box mt-4">
+                        <p><strong>Not medical treatment. Not yoga.</strong></p>
+                        <p>It’s root-level guidance for high-pressure lives.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 5 — WHAT THE CALL IS ABOUT -->
-    <section id="what-happens" class="section dark-bg">
+    <!-- 5. THE REAL PROBLEM ("Big Mistake" style) -->
+    <section id="real-problem" class="section light-bg text-center">
         <div class="container">
-            <h2 class="section-title">What Happens On the 1:1 Clarity Call</h2>
-            <p class="subtitle">This is <strong>NOT</strong> a sales call.</p>
-            
-            <div class="features-list">
-                <div class="feature-item">
-                    <span class="check">✔</span>
-                    <p>Understand why your pain or stress keeps returning</p>
+            <h2 class="section-title">Your Body Isn’t Weak. <span class="highlight-alt">It’s Overloaded.</span></h2>
+            <div class="comparison-block">
+                <div class="problem-text">
+                    <p>Chronic pain isn't random. It builds up from:</p>
+                    <div class="cause-grid">
+                        <div class="cause-item">Years of high-pressure routines</div>
+                        <div class="cause-item">Poor recovery under stress</div>
+                        <div class="cause-item">Emotional load</div>
+                        <div class="cause-item">Nervous system never switching off</div>
+                    </div>
+                    <p class="emphasis-text mt-4">You don’t need another fix. <strong>You need clarity.</strong></p>
                 </div>
-                <div class="feature-item">
-                    <span class="check">✔</span>
-                    <p>Identify hidden patterns affecting your body and energy</p>
-                </div>
-                <div class="feature-item">
-                    <span class="check">✔</span>
-                    <p>See whether your issue is physical, emotional, stress-based — or combined</p>
-                </div>
-                <div class="feature-item">
-                    <span class="check">✔</span>
-                    <p>Get clarity on what kind of healing approach you actually need</p>
-                </div>
-            </div>
-
-            <div class="outcome-box">
-                <h3>By the end of the call, you’ll know:</h3>
-                <ul>
-                    <li>What’s really going wrong</li>
-                    <li>Why nothing has worked long-term</li>
-                    <li>What the correct next step is for your situation</li>
-                </ul>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 6 — WHO THIS IS NOT FOR -->
-    <section id="not-for" class="section gray-bg">
-        <div class="container">
-            <h2 class="section-title">This Is NOT For You If…</h2>
-            <ul class="cross-list">
-                <li><span class="cross">✕</span> You’re looking for instant shortcuts</li>
-                <li><span class="cross">✕</span> You want a quick massage or temporary relief</li>
-                <li><span class="cross">✕</span> You’re not willing to look at the root cause</li>
-                <li><span class="cross">✕</span> You’re only curious, not serious</li>
-            </ul>
-            <p class="emphasis-text center-text">This call is for people who want real clarity, not surface comfort.</p>
-        </div>
-    </section>
-
-    <!-- SECTION 7 — NEXT STEPS -->
-    <section id="next-steps" class="section light-bg">
+    <!-- 6. SOCIAL PROOF (WhatsApp/Chat style) -->
+    <section id="social-proof" class="section gray-bg">
         <div class="container text-center">
-            <h2 class="section-title">If We’re a Good Fit…</h2>
-            <div class="process-step">
-                <p>After the clarity call, if Rashmi feels she can genuinely help you, she’ll explain:</p>
-                <ul>
-                    <li>How the healing process works</li>
-                    <li>What kind of commitment is required</li>
-                    <li>Whether a structured program is right for you</li>
-                </ul>
-            </div>
-            <div class="reassurance">
-                <p>If not, you’ll still leave with clarity.</p>
-                <p><strong>No pressure. No obligation.</strong></p>
+            <h2 class="section-title">What Clients Say</h2>
+            <div class="chat-grid">
+                <!-- Placeholders for chat screenshots -->
+                <div class="chat-bubble">"I can't believe the difference in just 2 weeks!"</div>
+                <div class="chat-bubble">"My back pain is actually gone. Thank you Rashmi."</div>
+                <div class="chat-bubble">"Best investment I've made for my health."</div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 8 — FINAL CTA -->
-    <section id="final-cta" class="section hero-section footer-cta">
+    <!-- 7. PROGRAM / CALL DETAILS (Module List Style) -->
+    <section id="what-happens" class="section dark-bg text-light">
         <div class="container">
-            <h2 class="headline small-headline">Your Work Matters.<br>But So Does the Body That Supports It.</h2>
-            <p class="sub-headline">
-                If chronic pain, stress, or exhaustion is silently affecting your performance
-            </p>
-            <div class="cta-container">
-                <a href="#book-call" class="primary-btn">Book Your Free Clarity Call</a>
+            <h2 class="section-title text-center">What Happens On the 1:1 Clarity Call</h2>
+            <p class="subtitle text-center">This is <strong>NOT</strong> a sales call.</p>
+
+            <div class="module-list">
+                <div class="module-item">
+                    <div class="module-number">01</div>
+                    <div class="module-content">
+                        <h3>Understanding the Return</h3>
+                        <p>Understand why your pain or stress keeps returning despite other treatments.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">02</div>
+                    <div class="module-content">
+                        <h3>Identify Hidden Patterns</h3>
+                        <p>Identify hidden patterns affecting your body and energy levels.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">03</div>
+                    <div class="module-content">
+                        <h3>Root Cause Analysis</h3>
+                        <p>See whether your issue is physical, emotional, stress-based — or combined.</p>
+                    </div>
+                </div>
+                <div class="module-item">
+                    <div class="module-number">04</div>
+                    <div class="module-content">
+                        <h3>The Healing Approach</h3>
+                        <p>Get clarity on exactly what kind of healing approach you need.</p>
+                    </div>
+                </div>
             </div>
-            <p class="final-note">One conversation can save you years of struggle.</p>
         </div>
     </section>
+
+    <!-- 8. OFFER / PRICING (Value Comparison) -->
+    <section id="offer" class="section light-bg">
+        <div class="container">
+            <div class="offer-cards-container">
+                <!-- "Value" Card -->
+                <div class="offer-card value-card">
+                    <h3>Typical Cost of Misdiagnosis</h3>
+                    <ul class="cost-list">
+                        <li>Years of therapy</li>
+                        <li>Endless medication</li>
+                        <li>Lost productivity</li>
+                    </ul>
+                    <div class="price-strike">Unknown Cost</div>
+                </div>
+
+                <!-- "Your Investment" Card -->
+                <div class="offer-card active-card">
+                    <div class="badge">Limited Time</div>
+                    <h3>1:1 Clarity Call</h3>
+                    <p>One conversation can save you years of struggle.</p>
+                    <div class="price-highlight">FREE</div>
+                    <a href="#book-call" class="primary-btn full-width-btn">Book Your Free Slot</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FAQ (Accordion) -->
+    <section id="faq" class="section gray-bg">
+        <div class="container">
+            <h2 class="section-title text-center">Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">Is this medical advice? <span>+</span></div>
+                    <div class="accordion-body">No, this is coaching and guidance to identify root causes. It
+                        complements medical advice but focuses on lifestyle, stress, and somatic patterns.</div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">How long is the clarity call? <span>+</span></div>
+                    <div class="accordion-body">The call typically lasts 30-45 minutes.</div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Who is this really for? <span>+</span></div>
+                    <div class="accordion-body">Entrepreneurs and professionals (35-55) who are successful but
+                        physically burnt out or in pain.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer class="footer dark-bg text-center">
+        <div class="container">
+            <p>&copy; 2025 Rashmi Coaching. All rights reserved.</p>
+            <p class="footer-links"><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- STICKY CTA BAR (Bottom) -->
+    <div id="sticky-cta" class="sticky-bar">
+        <div class="sticky-content">
+            <span class="sticky-text">Get Clarity on Your Pain</span>
+            <a href="#book-call" class="primary-btn small-btn">Book Now - Free</a>
+        </div>
+    </div>
+
+    <!-- Hidden anchor for booking to retain functionality -->
+    <div id="book-call"></div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
