@@ -789,6 +789,13 @@ a {
         /* Squeeze text in */
     }
 
+    .headline .highlight-alt {
+        white-space: nowrap;
+        /* Force "System Is" to stick together */
+        font-size: 90%;
+        /* Slightly shrink just the accented text to fit */
+    }
+
     .sub-headline {
         font-size: 0.9rem !important;
         line-height: 1.4;
