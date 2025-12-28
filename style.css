@@ -1,0 +1,492 @@
+/* =========================================
+   Base & Reset
+   ========================================= */
+:root {
+    /* Color Palette */
+    --primary-color: #0F2C3E;
+    /* Deep Blue - Authority */
+    --secondary-color: #D4A373;
+    /* Gold - Premium/Warmth */
+    --accent-color: #E76F51;
+    /* Burnt Orange - Action */
+    --accent-hover: #C5563D;
+
+    --bg-light: #FAFAFA;
+    --bg-white: #FFFFFF;
+    --bg-dark: #121E26;
+    --bg-gray: #F2F2F2;
+
+    --text-main: #1F2937;
+    --text-muted: #4B5563;
+    --text-light: #F9FAFB;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+
+    /* UI Elements */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* =========================================
+   Components
+   ========================================= */
+.primary-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(231, 111, 81, 0.4);
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(231, 111, 81, 0.5);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+}
+
+.dark-bg .section-title {
+    color: var(--text-light);
+}
+
+.emphasis-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.highlight {
+    color: var(--secondary-color);
+}
+
+.highlight-alt {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   Section 1: Hero
+   ========================================= */
+.hero-section {
+    background: linear-gradient(135deg, #0F2C3E 0%, #15384D 100%);
+    color: var(--text-light);
+    padding: 4rem 0 6rem;
+    text-align: center;
+}
+
+.trust-bar {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.trust-bar .separator {
+    margin: 0 10px;
+    opacity: 0.5;
+}
+
+.hero-section .headline {
+    font-size: 3.5rem;
+    max-width: 900px;
+    margin: 0 auto var(--spacing-sm);
+}
+
+.sub-headline {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-md);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.vsl-container {
+    margin: var(--spacing-md) auto;
+    max-width: 800px;
+}
+
+.vsl-placeholder {
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    aspect-ratio: 16/9;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.vsl-placeholder:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.play-button {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* =========================================
+   Section 2: Who This Is For
+   ========================================= */
+.dark-bg {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.grid-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--secondary-color);
+    transition: transform 0.3s;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+.grid-item .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.grid-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-family: var(--font-body);
+}
+
+.grid-item p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+    text-align: center;
+    border-left: none;
+    border-top: 3px solid var(--secondary-color);
+}
+
+/* =========================================
+   Section 3: The Real Problem
+   ========================================= */
+.inline-list {
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.inline-list li {
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-soft);
+    font-weight: 500;
+    border: 1px solid #eee;
+}
+
+/* =========================================
+   Section 4: Meet Your Coach
+   ========================================= */
+.split-layout .flex-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.image-col {
+    flex: 1;
+}
+
+.text-col {
+    flex: 1.2;
+}
+
+.coach-image-placeholder {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: #ddd;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.coach-image-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.notice-box {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-gray);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.notice-box p {
+    margin-bottom: 0.5rem;
+}
+
+.notice-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
+   Section 5: Call Details
+   ========================================= */
+.features-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.feature-item .check {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.feature-item p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.outcome-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.outcome-box h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-body);
+}
+
+.outcome-box ul {
+    display: inline-block;
+    text-align: left;
+}
+
+.outcome-box li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+    color: #fff;
+}
+
+.outcome-box li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+/* =========================================
+   Section 6: Not For
+   ========================================= */
+.gray-bg {
+    background-color: var(--bg-gray);
+}
+
+.cross-list {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.cross-list li {
+    background: #fff;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-muted);
+}
+
+.cross-list .cross {
+    color: #ef4444;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   Section 7: Next Steps
+   ========================================= */
+.process-step {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+}
+
+.process-step ul {
+    list-style-type: disc;
+    margin: 1rem auto;
+    display: inline-block;
+    text-align: left;
+}
+
+.process-step li {
+    margin-bottom: 0.5rem;
+}
+
+.reassurance {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+/* =========================================
+   Section 8: Footer CTA
+   ========================================= */
+.footer-cta {
+    background: var(--primary-color);
+    /* Matches Hero */
+    padding: 5rem 0;
+}
+
+.small-headline {
+    font-size: 2.5rem;
+}
+
+.final-note {
+    margin-top: 1.5rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* =========================================
+   Responsiveness
+   ========================================= */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .hero-section .headline {
+        font-size: 2.5rem;
+    }
+
+    .split-layout .flex-row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        border-left: 3px solid var(--secondary-color);
+        border-top: none;
+        text-align: left;
+    }
+
+    .trust-bar {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .trust-bar .separator {
+        display: none;
+    }
+}
