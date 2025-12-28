@@ -784,6 +784,31 @@ p {
         opacity: 1;
     }
 
+    /* 2. Layout Stacking & Grids */
+    .split-layout .flex-row,
+    .proof-grid,
+    .cause-grid,
+    .chat-grid,
+    .features-list {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        display: flex;
+        /* Force flex column for grids on mobile if needed, or grid 1col */
+        gap: 2rem;
+    }
+
+    .proof-grid,
+    .cause-grid {
+        display: grid;
+        /* Reset to grid but 1 col */
+    }
+
+    .image-col,
+    .text-col {
+        flex: 1;
+        width: 100%;
+    }
+
     .offer-cards-container {
         flex-direction: column;
         width: 100%;
@@ -793,10 +818,6 @@ p {
     .offer-card {
         width: 100%;
         max-width: 350px;
-    }
-
-    .features-list {
-        grid-template-columns: 1fr;
     }
 
     /* 3. Component Fixes */
@@ -851,18 +872,26 @@ p {
         width: 100%;
     }
 
-    /* 5. Fix Overflow */
+    /* 5. Fix Overflow & Spacing */
     body,
     html {
         overflow-x: hidden;
     }
 
     .container {
-        width: 92%;
+        width: 90%;
+        /* Slight adjustment */
         padding: 0;
+    }
+
+    .section {
+        padding: 4rem 0;
+        /* consistent pacing */
     }
 
     .active-card {
         transform: scale(1);
     }
 }
+
+```
