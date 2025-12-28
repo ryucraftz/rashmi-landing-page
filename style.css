@@ -780,13 +780,12 @@ a {
     }
 
     .headline {
-        font-size: 1.45rem !important;
-        /* Critical threshold size */
+        font-size: 1.35rem !important;
+        /* Drastic reduction for guaranteed fit */
         line-height: 1.25;
         width: 100%;
         padding: 0;
         letter-spacing: -0.5px;
-        /* Squeeze text in */
     }
 
     .headline .highlight-alt {
