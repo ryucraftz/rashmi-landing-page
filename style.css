@@ -233,6 +233,11 @@ p {
     overflow: hidden;
 }
 
+.hero-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
 .vsl-placeholder {
     background: #000;
     aspect-ratio: 16/9;
