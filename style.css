@@ -138,6 +138,16 @@ p {
     color: var(--primary-color);
 }
 
+.dark-bg {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.light-bg {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+}
+
 .dark-bg .section-title {
     color: var(--text-light);
 }
