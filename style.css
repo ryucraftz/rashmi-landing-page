@@ -771,9 +771,18 @@ a {
     }
 
     .headline {
-        font-size: 1.8rem !important;
-        /* Force smaller size on mobile */
-        line-height: 1.3;
+        font-size: 1.55rem !important;
+        /* Precision value to fit 3 lines */
+        line-height: 1.25;
+        width: 100%;
+    }
+
+    .sub-headline {
+        font-size: 0.95rem !important;
+        line-height: 1.4;
+        max-width: 100%;
+        padding: 0 0.5rem;
+        /* Give it a bit more width by reducing padding if needed */
     }
 
     .proof-grid {
