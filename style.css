@@ -152,6 +152,14 @@ p {
     color: var(--text-light);
 }
 
+.dark-bg p,
+.dark-bg li,
+.dark-bg .lead,
+.dark-bg .notice-box {
+    color: var(--text-light);
+    opacity: 0.9;
+}
+
 .text-light {
     color: var(--text-light);
 }
