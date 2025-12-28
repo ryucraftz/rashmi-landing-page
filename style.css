@@ -25,7 +25,7 @@
     --text-muted: #6B515A;
     --text-light: #FCEFF4;
 
-    /* Typography */
+    /* Typography Updates */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
 
@@ -33,8 +33,10 @@
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
+    --spacing-lg: 3rem;
+    /* Reduced from 4rem for tighter mobile feel */
+    --spacing-xl: 5rem;
+    /* Reduced from 6rem */
 
     /* UI Elements */
     --radius-sm: 8px;
@@ -52,15 +54,19 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
 }
 
 body {
     font-family: var(--font-body);
     color: var(--text-main);
     background-color: var(--bg-light);
-    line-height: 1.7;
+    line-height: 1.6;
+    /* Slightly tighter line height */
     overflow-x: hidden;
     font-size: 16px;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -69,8 +75,10 @@ h3,
 h4 {
     font-family: var(--font-heading);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.15;
     margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.02em;
+    /* Tighter heading tracking */
 }
 
 p {
@@ -85,14 +93,17 @@ a {
 }
 
 .container {
-    width: 90%;
+    width: 100%;
+    /* Changed from 90% for better control */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-sm);
+    padding: 0 1.5rem;
+    /* Increased padding */
 }
 
 .section {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
+    /* Reduced vertical padding globally */
 }
 
 .text-center {
@@ -110,10 +121,11 @@ a {
     display: inline-block;
     background-color: var(--accent-color);
     color: #fff;
-    padding: 1rem 2.5rem;
+    padding: 1rem 2rem;
+    /* Slightly smaller horizontal padding */
     border-radius: 50px;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
@@ -124,7 +136,7 @@ a {
 
 .primary-btn:hover {
     background-color: var(--accent-hover);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(184, 74, 98, 0.5);
 }
 
@@ -187,10 +199,12 @@ a {
     background-color: var(--bg-dark);
     color: var(--secondary-color);
     padding: 0.5rem 0;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    /* Smaller font */
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
+    text-align: center;
 }
 
 .flex-row-center {
@@ -198,25 +212,30 @@ a {
     justify-content: center;
     gap: 1rem;
     align-items: center;
+    flex-wrap: wrap;
+    /* Allow wrapping on small mobile */
 }
 
 .hero-section {
     background: linear-gradient(180deg, #FDF8F8 0%, #F5EFEB 100%);
-    padding: 4rem 0 6rem;
+    padding: 3rem 0 4rem;
     position: relative;
     overflow: hidden;
+    text-align: center;
+    /* Enforce center alignment */
 }
 
 .hero-section .headline {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    max-width: 900px;
+    /* Significantly reduced sizing for mobile */
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    max-width: 800px;
     margin: 0 auto var(--spacing-sm);
     color: var(--primary-color);
 }
 
 .sub-headline {
-    font-size: clamp(1.1rem, 3vw, 1.25rem);
-    max-width: 700px;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    max-width: 600px;
     margin: 0 auto var(--spacing-md);
     color: var(--text-muted);
 }
@@ -645,16 +664,19 @@ a {
     .split-layout .flex-row {
         flex-direction: column;
         text-align: center;
-        gap: 2.5rem;
-    }
-
-    .check-list li {
-        text-align: left;
-        display: inline-block;
+        gap: 2rem;
     }
 
     .section-title.left-align {
         text-align: center;
+    }
+
+    /* Enforce center titles on mobile */
+
+    .check-list li {
+        text-align: left;
+        /* Keep list left aligned but centered block */
+        display: inline-block;
     }
 
     .active-card {
@@ -668,20 +690,22 @@ a {
         --spacing-md: 1.5rem;
     }
 
+    .container {
+        padding: 0 1rem;
+    }
+
     .top-bar .flex-row-center {
-        /* Marquee Effect for Mobile */
-        justify-content: flex-start;
-        animation: mobileMarquee 15s linear infinite;
-        white-space: nowrap;
-        padding-left: 100%;
-        width: max-content;
+        /* Removed Marquee - Just stack or hide separator */
+        justify-content: center;
+        white-space: normal;
+        gap: 0.5rem;
     }
 
     .top-bar .separator {
-        opacity: 1;
-        display: inline-block;
-        margin: 0 1rem;
+        display: none;
     }
+
+    /* Hide dots on mobile */
 
     @keyframes mobileMarquee {
         0% {
@@ -691,6 +715,16 @@ a {
         100% {
             transform: translateX(-50%);
         }
+    }
+
+    .hero-section {
+        padding-top: 2rem;
+    }
+
+    .headline {
+        font-size: 2.2rem !important;
+        /* Force smaller size on mobile */
+        line-height: 1.2;
     }
 
     .proof-grid {
