@@ -771,21 +771,30 @@ a {
     }
 
     .container {
-        padding: 0 0.8rem;
-        /* Maximize width */
+        padding: 0 0.2rem;
+        /* Extreme width optimization */
     }
 
     .headline br {
         display: none;
-        /* Let text wrap naturally */
     }
 
     .headline {
-        font-size: 1.5rem !important;
+        font-size: 1.45rem !important;
+        /* Critical threshold size */
         line-height: 1.25;
         width: 100%;
-        padding: 0 5px;
-        /* Prevent edge touching */
+        padding: 0;
+        letter-spacing: -0.5px;
+        /* Squeeze text in */
+    }
+
+    .sub-headline {
+        font-size: 0.9rem !important;
+        line-height: 1.4;
+        max-width: 100%;
+        padding: 0;
+        letter-spacing: -0.2px;
     }
 
     .sub-headline {
