@@ -25,7 +25,7 @@
     </div>
 
     <!-- 2. HERO SECTION -->
-    <header id="hero" class="hero-section center-text">
+    <header id="hero" class="hero-section text-center" data-aos="fade-up">
         <div class="container">
             <h1 class="headline">
                 Chronic Pain & Stress<br>
@@ -55,8 +55,8 @@
     <!-- 3. PROOF / RESULTS GRID (New Section based on reference) -->
     <section id="proof" class="section light-bg">
         <div class="container">
-            <h2 class="section-title text-center">Real Results</h2>
-            <div class="grid-layout proof-grid">
+            <h2 class="section-title text-center" data-aos="fade-up">Real Results</h2>
+            <div class="grid-layout proof-grid" data-aos="fade-up" data-aos-delay="200">
                 <!-- Placeholders for "Before/After" style results -->
                 <div class="proof-card">
                     <div class="proof-image">Result Placeholder 1</div>
@@ -86,12 +86,12 @@
     <!-- 4. MEET YOUR COACH -->
     <section id="meet-coach" class="section split-layout dark-bg text-light">
         <div class="container flex-row">
-            <div class="image-col">
+            <div class="image-col" data-aos="fade-right">
                 <div class="coach-image-placeholder">
                     <span>Rashmi's Photo</span>
                 </div>
             </div>
-            <div class="text-col">
+            <div class="text-col" data-aos="fade-left">
                 <h2 class="section-title left-align">Meet Rashmi</h2>
                 <div class="bio-content">
                     <p class="lead">Rashmi works with entrepreneurs and professionals whose ambition is strong — but
@@ -113,8 +113,9 @@
     <!-- 5. THE REAL PROBLEM ("Big Mistake" style) -->
     <section id="real-problem" class="section light-bg text-center">
         <div class="container">
-            <h2 class="section-title">Your Body Isn’t Weak. <span class="highlight-alt">It’s Overloaded.</span></h2>
-            <div class="comparison-block">
+            <h2 class="section-title" data-aos="fade-up">Your Body Isn’t Weak. <span class="highlight-alt">It’s
+                    Overloaded.</span></h2>
+            <div class="comparison-block" data-aos="fade-up" data-aos-delay="200">
                 <div class="problem-text">
                     <p>Chronic pain isn't random. It builds up from:</p>
                     <div class="cause-grid">
@@ -145,7 +146,7 @@
     <!-- 7. PROGRAM / CALL DETAILS (Module List Style) -->
     <section id="what-happens" class="section dark-bg text-light">
         <div class="container">
-            <h2 class="section-title text-center">What Happens On the 1:1 Clarity Call</h2>
+            <h2 class="section-title text-center" data-aos="fade-up">What Happens On the 1:1 Clarity Call</h2>
             <p class="subtitle text-center">This is <strong>NOT</strong> a sales call.</p>
 
             <div class="module-list">
@@ -184,7 +185,7 @@
     <!-- 8. OFFER / PRICING (Value Comparison) -->
     <section id="offer" class="section light-bg">
         <div class="container">
-            <div class="offer-cards-container">
+            <div class="offer-cards-container" data-aos="zoom-in">
                 <!-- "Value" Card -->
                 <div class="offer-card value-card">
                     <h3>Typical Cost of Misdiagnosis</h3>
@@ -249,6 +250,10 @@
 
     <!-- Hidden anchor for booking to retain functionality -->
     <div id="book-call"></div>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="script.js"></script>
 </body>
