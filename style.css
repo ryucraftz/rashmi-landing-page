@@ -776,6 +776,7 @@ p {
         gap: 2rem;
         padding-left: 100%;
         /* Start from right edge */
+        white-space: nowrap;
     }
 
     .top-bar .separator {
