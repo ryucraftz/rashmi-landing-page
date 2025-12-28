@@ -770,11 +770,22 @@ a {
         padding-top: 2rem;
     }
 
+    .container {
+        padding: 0 0.8rem;
+        /* Maximize width */
+    }
+
+    .headline br {
+        display: none;
+        /* Let text wrap naturally */
+    }
+
     .headline {
-        font-size: 1.55rem !important;
-        /* Precision value to fit 3 lines */
+        font-size: 1.5rem !important;
         line-height: 1.25;
         width: 100%;
+        padding: 0 5px;
+        /* Prevent edge touching */
     }
 
     .sub-headline {
