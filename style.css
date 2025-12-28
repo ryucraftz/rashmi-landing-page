@@ -284,16 +284,18 @@ a {
    3. PROOF GRID
    ========================================= */
 .proof-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    display: flex;
+    /* Switched to flex to basic horizontal row */
+    overflow-x: auto;
+    /* Horizontal scroll */
+    overflow-y: hidden;
+    gap: 1.5rem;
+    padding: 1.5rem 0.5rem;
+    /* Padding for shadow and hover lift */
 
-    /* Vertical Scroll Implementation */
-    max-height: 600px;
-    /* Adjust height as needed */
-    overflow-y: auto;
-    padding: 1rem;
-    /* Prevent shadow cutout */
+    /* Snapping for better UX */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 
     /* Custom Scrollbar */
     scrollbar-width: thin;
@@ -301,7 +303,8 @@ a {
 }
 
 .proof-grid::-webkit-scrollbar {
-    width: 6px;
+    height: 6px;
+    /* Horizontal bar height */
 }
 
 .proof-grid::-webkit-scrollbar-track {
@@ -315,8 +318,15 @@ a {
     border: 2px solid var(--bg-gray);
 }
 
-
 .proof-card {
+    min-width: 280px;
+    max-width: 320px;
+    /* Prevent them from getting too huge */
+    flex: 0 0 auto;
+    /* Don't shrink */
+    scroll-snap-align: center;
+    /* Center on stop */
+
     background: #fff;
     border-radius: var(--radius-sm);
     overflow: hidden;
