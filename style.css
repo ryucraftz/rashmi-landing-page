@@ -673,10 +673,22 @@ a {
 
     /* Enforce center titles on mobile */
 
-    .check-list li {
-        text-align: left;
-        /* Keep list left aligned but centered block */
+    .bio-content .check-list {
         display: inline-block;
+        /* Make the list itself a block that fits content */
+        text-align: left;
+        /* Keep internal text left aligned */
+        margin: 0 auto;
+        /* Center the list block */
+        max-width: 100%;
+    }
+
+    .check-list li {
+        display: block;
+        /* Stack items normally */
+        padding-left: 2rem;
+        /* Keep space for checkmark */
+        margin-bottom: 0.8rem;
     }
 
     .active-card {
