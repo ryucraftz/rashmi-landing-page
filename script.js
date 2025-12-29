@@ -1,10 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize AOS
+    // Initialize AOS with optimized settings
     AOS.init({
-        duration: 1000,
+        duration: 800,
         once: true,
-        offset: 80,
-        easing: 'ease-out-cubic'
+        offset: 100,
+        easing: 'ease-out-cubic',
+        delay: 100,
+        disable: false,
+        startEvent: 'DOMContentLoaded',
+        initClassName: 'aos-init',
+        animatedClassName: 'aos-animate',
+        useClassNames: false,
+        disableMutationObserver: false,
+        debounceDelay: 50,
+        throttleDelay: 99,
     });
 
     // Smooth scroll
@@ -14,22 +23,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({
-                    behavior: 'smooth'
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
     });
 
-    // Accordion Logic
+    // Accordion Logic with improved animation
     const accordions = document.querySelectorAll('.accordion-header');
     accordions.forEach(acc => {
         acc.addEventListener('click', () => {
             const item = acc.parentElement;
-            // Close others if needed (optional, keeping multi-open for now)
+            const wasActive = item.classList.contains('active');
+
+            // Optional: Close other accordions (single open at a time)
+            // accordions.forEach(other => {
+            //     if (other !== acc) other.parentElement.classList.remove('active');
+            // });
+
             item.classList.toggle('active');
 
             const span = acc.querySelector('span');
-            if (item.classList.contains('active')) {
+            if (!wasActive) {
                 span.textContent = "-";
             } else {
                 span.textContent = "+";
@@ -37,64 +53,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sticky CTA Logic
+    // Sticky CTA Logic with throttle for performance
     const stickyCta = document.getElementById('sticky-cta');
     const heroBtn = document.querySelector('.hero-cta .primary-btn');
 
     if (stickyCta && heroBtn) {
+        let ticking = false;
+
         window.addEventListener('scroll', () => {
-            const heroBtnRect = heroBtn.getBoundingClientRect();
-            if (heroBtnRect.bottom < 0) {
-                stickyCta.classList.add('visible');
-            } else {
-                stickyCta.classList.remove('visible');
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const heroBtnRect = heroBtn.getBoundingClientRect();
+                    if (heroBtnRect.bottom < 0) {
+                        stickyCta.classList.add('visible');
+                    } else {
+                        stickyCta.classList.remove('visible');
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
-        });
+        }, { passive: true });
     }
 
-    // Hybrid Marquee Logic
-    const marquee = document.querySelector('.proof-marquee');
-    const group = document.querySelector('.proof-group');
+    // Add stagger effect to module items
+    const moduleItems = document.querySelectorAll('.module-item');
+    moduleItems.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.15}s`;
+    });
 
-    if (marquee && group) {
-        let scrollAmount = 0;
-        let isHovered = false;
-        // Speed in px per frame. Adjust for smoothness (0.5 is slow/smooth)
-        const speed = 0.5;
+    // Add entrance animation to chat bubbles
+    const chatBubbles = document.querySelectorAll('.chat-bubble');
+    chatBubbles.forEach((bubble, index) => {
+        bubble.style.opacity = '0';
+        bubble.style.transform = 'translateY(20px)';
+        bubble.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
 
-        function startMarquee() {
-            // If user is hovering or touching, don't auto-scroll
-            if (!isHovered) {
-                scrollAmount += speed;
+        setTimeout(() => {
+            bubble.style.opacity = '1';
+            bubble.style.transform = 'translateY(0)';
+        }, index * 150);
+    });
 
-                // If we've scrolled past the first group width, reset to 0
-                // This creates the seamless loop illusion
-                // Note: floating point errors can accumulate, so strict resetting is key
-                if (scrollAmount >= group.scrollWidth) { // Changed to scrollWidth to be safer
-                    scrollAmount = 0;
-                }
-
-                marquee.scrollLeft = scrollAmount;
-            } else {
-                // If hovered, we sync our internal counter to the current scroll position
-                // so it doesn't jump when mouse leaves
-                scrollAmount = marquee.scrollLeft;
-            }
-
-            requestAnimationFrame(startMarquee);
-        }
-
-        // Event Listeners for Pause
-        marquee.addEventListener('mouseenter', () => { isHovered = true; });
-        marquee.addEventListener('mouseleave', () => { isHovered = false; });
-        marquee.addEventListener('touchstart', () => { isHovered = true; }, { passive: true });
-        marquee.addEventListener('touchend', () => {
-            // Small delay to allow swipe momentum to finish before resuming (optional)
-            setTimeout(() => { isHovered = false; }, 1000);
-        });
-
-        startMarquee();
-    }
-
-    console.log("Rashmi Landing Page (Restructured) Loaded");
+    console.log("Rashmi Landing Page - Optimized & Loaded ✨");
 });
