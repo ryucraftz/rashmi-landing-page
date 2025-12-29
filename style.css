@@ -726,12 +726,17 @@ a {
    DOCUMENTS SECTION
    ========================================= */
 .documents-container {
-    display: flex;
-    justify-content: center;
-    text-align: left;
+    display: block;
+    /* Change from flex to block to easier center the list */
+    text-align: center;
+    /* Center the list itself */
 }
 
 .bullet-list {
+    display: inline-block;
+    /* Make list wrap its content */
+    text-align: left;
+    /* Keep list items left-aligned */
     list-style: none;
     /* We will use custom bullets */
     padding: 0;
