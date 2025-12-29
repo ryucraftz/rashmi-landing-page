@@ -813,12 +813,20 @@ a {
 
     /* Headline adjustment handled by clamp() in base class, 
        just ensuring line-height is good */
+    /* Headline adjustment handled by clamp() in base class */
     .headline {
         letter-spacing: -0.5px;
     }
 
     .headline br {
         display: none;
+    }
+
+    .headline .highlight-alt {
+        display: block;
+        /* Force new line */
+        margin-top: 0.5rem;
+        font-size: 90%;
     }
 
     .sub-headline {
