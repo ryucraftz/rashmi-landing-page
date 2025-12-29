@@ -413,16 +413,25 @@ a {
    3. PROOF GRID
    ========================================= */
 /* =========================================
-   3. PROOF GRID (MARQUEE) - OPTIMIZED
+   3. PROOF GRID (MARQUEE) - HYBRID SCROLL
    ========================================= */
 .proof-marquee {
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     position: relative;
     width: 100%;
     padding: 1.5rem 0;
     cursor: grab;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.proof-marquee::-webkit-scrollbar {
+    display: none;
 }
 
 .proof-marquee:active {
@@ -432,23 +441,7 @@ a {
 .proof-track {
     display: flex;
     gap: 0;
-    will-change: transform;
-    /* Hardware acceleration hint */
-    animation: marquee-scroll 8s linear infinite;
-}
-
-.proof-track:hover {
-    animation-play-state: paused;
-}
-
-@keyframes marquee-scroll {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-
-    100% {
-        transform: translate3d(-50%, 0, 0);
-    }
+    width: max-content;
 }
 
 .proof-group {
@@ -1234,14 +1227,9 @@ a {
         aspect-ratio: 0.65;
     }
 
-    /* Optimize proof marquee for mobile */
+    /* Optimize proof marquee for mobile - keep scrollable */
     .proof-marquee {
-        -webkit-mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
-        mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
-    }
-
-    .proof-track {
-        animation: marquee-scroll 6s linear infinite;
+        scroll-snap-type: x mandatory;
     }
 
     .proof-card {

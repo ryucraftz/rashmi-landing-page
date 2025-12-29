@@ -76,6 +76,69 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
+    // Hybrid Auto-Scroll Marquee with Manual Drag Support
+    const marquee = document.querySelector('.proof-marquee');
+
+    if (marquee) {
+        let scrollAmount = 0;
+        let isUserInteracting = false;
+        const scrollSpeed = 1; // pixels per frame
+        const pauseDuration = 3000; // pause for 3 seconds after user interaction
+
+        function autoScroll() {
+            if (!isUserInteracting) {
+                scrollAmount += scrollSpeed;
+
+                // Check if we've reached the end, reset to beginning
+                const maxScroll = marquee.scrollWidth - marquee.clientWidth;
+                if (scrollAmount >= maxScroll) {
+                    scrollAmount = 0;
+                }
+
+                marquee.scrollLeft = scrollAmount;
+            }
+            requestAnimationFrame(autoScroll);
+        }
+
+        // Start auto-scroll
+        autoScroll();
+
+        // Pause on hover
+        marquee.addEventListener('mouseenter', () => {
+            isUserInteracting = true;
+        });
+
+        marquee.addEventListener('mouseleave', () => {
+            isUserInteracting = false;
+            scrollAmount = marquee.scrollLeft;
+        });
+
+        // Pause on touch/drag
+        marquee.addEventListener('touchstart', () => {
+            isUserInteracting = true;
+        }, { passive: true });
+
+        marquee.addEventListener('touchend', () => {
+            setTimeout(() => {
+                isUserInteracting = false;
+                scrollAmount = marquee.scrollLeft;
+            }, pauseDuration);
+        });
+
+        // Pause on manual scroll
+        let scrollTimeout;
+        marquee.addEventListener('scroll', () => {
+            if (!isUserInteracting) {
+                isUserInteracting = true;
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    isUserInteracting = false;
+                    scrollAmount = marquee.scrollLeft;
+                }, pauseDuration);
+            }
+        }, { passive: true });
+    }
+
     // Add stagger effect to module items
     const moduleItems = document.querySelectorAll('.module-item');
     moduleItems.forEach((item, index) => {
