@@ -334,14 +334,16 @@ a {
     position: relative;
     width: 100%;
     padding: 1.5rem 0;
-    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    /* Gentler mask */
+    mask-image: linear-gradient(to right, transparent, black 100px, black calc(100% - 100px), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 100px, black calc(100% - 100px), transparent);
 }
 
 .proof-track {
     display: flex;
     width: fit-content;
-    gap: 1.5rem;
+    gap: 0;
+    /* Remove gap here to fix percentage math */
     animation: scroll-proof 40s linear infinite;
 }
 
@@ -353,6 +355,8 @@ a {
     display: flex;
     gap: 1.5rem;
     align-items: center;
+    padding-right: 1.5rem;
+    /* Add the gap here so 1 group = content + spacing */
 }
 
 @keyframes scroll-proof {
@@ -362,7 +366,7 @@ a {
 
     100% {
         transform: translateX(-50%);
-        /* Move by 50% because we have 2 identical groups */
+        /* Now perfectly seamless */
     }
 }
 
