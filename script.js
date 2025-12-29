@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     accordions.forEach(acc => {
         acc.addEventListener('click', () => {
             const item = acc.parentElement;
-            const wasActive = item.classList.contains('active');
 
             // Optional: Close other accordions (single open at a time)
             // accordions.forEach(other => {
@@ -43,13 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // });
 
             item.classList.toggle('active');
-
-            const span = acc.querySelector('span');
-            if (!wasActive) {
-                span.textContent = "-";
-            } else {
-                span.textContent = "+";
-            }
         });
     });
 
