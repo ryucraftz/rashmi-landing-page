@@ -492,6 +492,70 @@ a {
     font-size: 0.95rem;
 }
 
+/* --- Real Results Improvisations --- */
+
+/* 1. Verified Badge */
+.verified-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.verified-badge svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--accent-color);
+}
+
+/* 2. Star Rating */
+.star-rating {
+    color: #FFB400;
+    /* Gold */
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+/* 3. Shine Effect */
+.proof-card {
+    position: relative;
+    /* Ensure no spill */
+}
+
+.proof-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+}
+
+.proof-card:hover::after {
+    animation: shine 0.75s;
+}
+
+@keyframes shine {
+    100% {
+        left: 150%;
+    }
+}
+
 /* =========================================
    4. MEET COACH
    ========================================= */
