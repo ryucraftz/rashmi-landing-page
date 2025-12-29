@@ -334,14 +334,15 @@ a {
     position: relative;
     width: 100%;
     padding: 1.5rem 0;
-    /* Gentler mask */
-    mask-image: linear-gradient(to right, transparent, black 100px, black calc(100% - 100px), transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 100px, black calc(100% - 100px), transparent);
+    /* Gentler mask - dynamic 5% to avoid cutting off too much on mobile */
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
 .proof-track {
     display: flex;
-    width: fit-content;
+    width: max-content;
+    /* Ensure it doesn't wrap oddly */
     gap: 0;
     /* Remove gap here to fix percentage math */
     animation: scroll-proof 40s linear infinite;
