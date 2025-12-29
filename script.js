@@ -52,5 +52,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Hybrid Marquee Logic
+    const marquee = document.querySelector('.proof-marquee');
+    const group = document.querySelector('.proof-group');
+
+    if (marquee && group) {
+        let scrollAmount = 0;
+        let isHovered = false;
+        // Speed in px per frame. Adjust for smoothness (0.5 is slow/smooth)
+        const speed = 0.5;
+
+        function startMarquee() {
+            // If user is hovering or touching, don't auto-scroll
+            if (!isHovered) {
+                scrollAmount += speed;
+
+                // If we've scrolled past the first group width, reset to 0
+                // This creates the seamless loop illusion
+                // Note: floating point errors can accumulate, so strict resetting is key
+                if (scrollAmount >= group.scrollWidth) { // Changed to scrollWidth to be safer
+                    scrollAmount = 0;
+                }
+
+                marquee.scrollLeft = scrollAmount;
+            } else {
+                // If hovered, we sync our internal counter to the current scroll position
+                // so it doesn't jump when mouse leaves
+                scrollAmount = marquee.scrollLeft;
+            }
+
+            requestAnimationFrame(startMarquee);
+        }
+
+        // Event Listeners for Pause
+        marquee.addEventListener('mouseenter', () => { isHovered = true; });
+        marquee.addEventListener('mouseleave', () => { isHovered = false; });
+        marquee.addEventListener('touchstart', () => { isHovered = true; }, { passive: true });
+        marquee.addEventListener('touchend', () => {
+            // Small delay to allow swipe momentum to finish before resuming (optional)
+            setTimeout(() => { isHovered = false; }, 1000);
+        });
+
+        startMarquee();
+    }
+
     console.log("Rashmi Landing Page (Restructured) Loaded");
 });

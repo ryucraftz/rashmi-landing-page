@@ -327,16 +327,33 @@ a {
    3. PROOF GRID
    ========================================= */
 /* =========================================
-   3. PROOF GRID (MARQUEE)
+   3. PROOF GRID (MARQUEE) - HYBRID JS/CSS
    ========================================= */
 .proof-marquee {
-    overflow: hidden;
+    overflow-x: auto;
+    /* Enable native scroll */
+    overflow-y: hidden;
     position: relative;
     width: 100%;
     padding: 1.5rem 0;
     /* Gentler mask - dynamic 5% to avoid cutting off too much on mobile */
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    /* Hide Scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    cursor: grab;
+}
+
+.proof-marquee::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.proof-marquee:active {
+    cursor: grabbing;
 }
 
 .proof-track {
@@ -345,11 +362,7 @@ a {
     /* Ensure it doesn't wrap oddly */
     gap: 0;
     /* Remove gap here to fix percentage math */
-    animation: scroll-proof 40s linear infinite;
-}
-
-.proof-track:hover {
-    animation-play-state: paused;
+    /* CSS Animation removed for JS control */
 }
 
 .proof-group {
@@ -357,18 +370,6 @@ a {
     gap: 1.5rem;
     align-items: center;
     padding-right: 1.5rem;
-    /* Add the gap here so 1 group = content + spacing */
-}
-
-@keyframes scroll-proof {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-        /* Now perfectly seamless */
-    }
 }
 
 .proof-card {
