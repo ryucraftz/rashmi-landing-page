@@ -822,11 +822,30 @@ a {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     transition: background 0.2s;
 }
 
 .accordion-header:hover {
     background: #fafafa;
+}
+
+.accordion-header span {
+    transition: transform 0.3s ease;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.accordion-item.active .accordion-header span {
+    transform: rotate(45deg);
+    /* Spin to X */
+    color: var(--accent-color);
+}
+
+.accordion-item.active {
+    box-shadow: 0 10px 30px -5px rgba(184, 74, 98, 0.15);
+    /* Glow */
+    border: 1px solid rgba(184, 74, 98, 0.1);
 }
 
 .accordion-body {
@@ -837,6 +856,77 @@ a {
     color: var(--text-muted);
     border-top: 1px solid transparent;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- Final Polish Improvisations --- */
+
+/* 1. Signature Animation */
+.signature-container {
+    margin-top: 2rem;
+    width: 200px;
+}
+
+.rashmi-signature path {
+    stroke-dasharray: 400;
+    /* Approximate length */
+    stroke-dashoffset: 400;
+    transition: stroke-dashoffset 2s ease-out 0.5s;
+}
+
+.aos-animate .rashmi-signature path {
+    stroke-dashoffset: 0;
+}
+
+/* 2. Wave Dividers */
+.wave-divider {
+    position: absolute;
+    bottom: -1px;
+    /* overlapping fix */
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+.wave-divider .shape-fill {
+    fill: var(--bg-light);
+    /* Transition to light section */
+}
+
+/* 3. Wave Top (Inverse) */
+.wave-divider-top {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
+}
+
+.wave-divider-top svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+.wave-divider-top .shape-fill {
+    fill: var(--bg-gray);
+    /* Match the section before it (Social Proof) */
+}
+
+/* Adjust Section positioning for waves */
+#meet-coach,
+#what-happens {
+    position: relative;
 }
 
 .accordion-item.active .accordion-body {
