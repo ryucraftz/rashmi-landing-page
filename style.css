@@ -434,7 +434,7 @@ a {
     gap: 0;
     will-change: transform;
     /* Hardware acceleration hint */
-    animation: marquee-scroll 30s linear infinite;
+    animation: marquee-scroll 20s linear infinite;
 }
 
 .proof-track:hover {
@@ -1240,7 +1240,7 @@ a {
     }
 
     .proof-track {
-        animation: marquee-scroll 25s linear infinite;
+        animation: marquee-scroll 18s linear infinite;
     }
 
     .proof-card {
