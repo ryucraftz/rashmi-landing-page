@@ -434,7 +434,7 @@ a {
     gap: 0;
     will-change: transform;
     /* Hardware acceleration hint */
-    animation: marquee-scroll 12s linear infinite;
+    animation: marquee-scroll 8s linear infinite;
 }
 
 .proof-track:hover {
@@ -634,6 +634,7 @@ a {
 
 .coach-image-placeholder {
     width: 100%;
+    max-width: 550px;
     aspect-ratio: 0.85;
     background-color: #DAB6AA;
     border-radius: var(--radius-md);
@@ -1109,7 +1110,7 @@ a {
 
     /* Make Rashmi's photo bigger on tablet */
     .coach-image-placeholder {
-        max-width: 500px;
+        max-width: 600px;
         margin: 0 auto;
     }
 }
@@ -1228,9 +1229,9 @@ a {
     /* Make Rashmi's photo MUCH bigger on mobile */
     .coach-image-placeholder {
         width: 100%;
-        max-width: 500px;
+        max-width: 550px;
         margin: 0 auto;
-        aspect-ratio: 0.7;
+        aspect-ratio: 0.65;
     }
 
     /* Optimize proof marquee for mobile */
@@ -1240,7 +1241,7 @@ a {
     }
 
     .proof-track {
-        animation: marquee-scroll 10s linear infinite;
+        animation: marquee-scroll 6s linear infinite;
     }
 
     .proof-card {
