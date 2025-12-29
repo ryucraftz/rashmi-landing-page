@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize AOS
     AOS.init({
-        duration: 800,
+        duration: 1000,
         once: true,
-        offset: 100
+        offset: 80,
+        easing: 'ease-out-cubic'
     });
 
     // Smooth scroll
@@ -23,13 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const accordions = document.querySelectorAll('.accordion-header');
     accordions.forEach(acc => {
         acc.addEventListener('click', () => {
-            const body = acc.nextElementSibling;
-            if (body.style.display === "block") {
-                body.style.display = "none";
-                acc.querySelector('span').textContent = "+";
+            const item = acc.parentElement;
+            // Close others if needed (optional, keeping multi-open for now)
+            item.classList.toggle('active');
+
+            const span = acc.querySelector('span');
+            if (item.classList.contains('active')) {
+                span.textContent = "-";
             } else {
-                body.style.display = "block";
-                acc.querySelector('span').textContent = "-";
+                span.textContent = "+";
             }
         });
     });
@@ -37,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sticky CTA Logic
     const stickyCta = document.getElementById('sticky-cta');
     const heroBtn = document.querySelector('.hero-cta .primary-btn');
-    
-    if(stickyCta && heroBtn) {
+
+    if (stickyCta && heroBtn) {
         window.addEventListener('scroll', () => {
             const heroBtnRect = heroBtn.getBoundingClientRect();
             if (heroBtnRect.bottom < 0) {

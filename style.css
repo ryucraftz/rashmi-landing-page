@@ -477,7 +477,8 @@ a {
 }
 
 .cause-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -10px rgba(74, 21, 38, 0.15);
 }
 
 /* =========================================
@@ -527,6 +528,8 @@ a {
 
 .module-item:hover {
     background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .module-number {
@@ -662,10 +665,21 @@ a {
 }
 
 .accordion-body {
-    padding: 0 1.5rem 1.5rem;
-    display: none;
+    padding: 0 1.5rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
     color: var(--text-muted);
-    border-top: 1px solid #eee;
+    border-top: 1px solid transparent;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.accordion-item.active .accordion-body {
+    max-height: 500px;
+    /* Arbitrary large height */
+    opacity: 1;
+    padding-bottom: 1.5rem;
+    border-color: #eee;
 }
 
 .footer {
