@@ -318,6 +318,73 @@ a {
     transform: scale(1.1);
 }
 
+
+/* Scribble Animation */
+.scribble-container {
+    position: relative;
+    display: inline-block;
+}
+
+.scribble-underline {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    overflow: visible;
+    z-index: -1;
+}
+
+.scribble-underline path {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    transition: stroke-dashoffset 1s ease-out 0.5s;
+}
+
+/* Trigger animation when parent is visible (using AOS class) */
+.aos-animate .scribble-underline path {
+    stroke-dashoffset: 0;
+}
+
+/* Background Blobs */
+.background-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 0.4;
+    animation: float-blob 10s infinite ease-in-out alternate;
+    pointer-events: none;
+}
+
+.blob-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--secondary-color);
+    top: -100px;
+    left: -100px;
+}
+
+.blob-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--accent-color);
+    bottom: -150px;
+    right: -100px;
+    opacity: 0.15;
+    animation-delay: -5s;
+}
+
+@keyframes float-blob {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(30px, 50px) scale(1.1);
+    }
+}
+
 .hero-cta {
     text-align: center;
     margin-top: 2rem;
@@ -773,43 +840,61 @@ a {
 /* =========================================
    DOCUMENTS SECTION
    ========================================= */
-.documents-container {
-    display: block;
-    /* Change from flex to block to easier center the list */
-    text-align: center;
-    /* Center the list itself */
+/* Better list styling removed in favor of grid */
+
+/* =========================================
+   DOCUMENTS REQUIRED (GRID)
+   ========================================= */
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 2rem auto 0;
 }
 
-.bullet-list {
-    display: inline-block;
-    /* Make list wrap its content */
-    text-align: left;
-    /* Keep list items left-aligned */
-    list-style: none;
-    /* We will use custom bullets */
-    padding: 0;
-    margin: 0 auto;
-    max-width: 600px;
-    font-size: 1.1rem;
+.doc-card {
+    background: rgba(255, 255, 255, 0.05);
+    /* Glass-ish dark theme */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: default;
 }
 
-.bullet-list li {
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-    position: relative;
-    color: rgba(255, 255, 255, 0.9);
+.doc-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
-.bullet-list li::before {
-    content: '•';
+.doc-icon {
+    width: 48px;
+    height: 48px;
     color: var(--secondary-color);
-    font-weight: bold;
-    font-size: 1.5rem;
-    position: absolute;
-    left: 0;
-    top: -5px;
-    /* Adjust alignment */
-    line-height: 1;
+    background: rgba(218, 182, 170, 0.1);
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doc-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 2px;
+}
+
+.doc-card span {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
 }
 
 /* =========================================
