@@ -858,83 +858,12 @@ a {
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* --- Final Polish Improvisations --- */
-
-/* 1. Signature Animation */
-.signature-container {
-    margin-top: 2rem;
-    width: 200px;
-}
-
-.rashmi-signature path {
-    stroke-dasharray: 400;
-    /* Approximate length */
-    stroke-dashoffset: 400;
-    transition: stroke-dashoffset 2s ease-out 0.5s;
-}
-
-.aos-animate .rashmi-signature path {
-    stroke-dashoffset: 0;
-}
-
-/* 2. Wave Dividers */
-.wave-divider {
-    position: absolute;
-    bottom: -1px;
-    /* overlapping fix */
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.wave-divider svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 60px;
-}
-
-.wave-divider .shape-fill {
-    fill: var(--bg-light);
-    /* Transition to light section */
-}
-
-/* 3. Wave Top (Inverse) */
-.wave-divider-top {
-    position: absolute;
-    top: -1px;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    z-index: 1;
-}
-
-.wave-divider-top svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 60px;
-}
-
-.wave-divider-top .shape-fill {
-    fill: var(--bg-gray);
-    /* Match the section before it (Social Proof) */
-}
-
-/* Adjust Section positioning for waves */
-#meet-coach,
-#what-happens {
-    position: relative;
-}
-
 .accordion-item.active .accordion-body {
     max-height: 500px;
     /* Arbitrary large height */
     opacity: 1;
-    padding-bottom: 1.5rem;
-    border-color: #eee;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .footer {
