@@ -723,6 +723,43 @@ a {
 }
 
 /* =========================================
+   DOCUMENTS SECTION
+   ========================================= */
+.documents-container {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+.bullet-list {
+    list-style: none;
+    /* We will use custom bullets */
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+    font-size: 1.1rem;
+}
+
+.bullet-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.bullet-list li::before {
+    content: '•';
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+    /* Adjust alignment */
+    line-height: 1;
+}
+
+/* =========================================
    Responsiveness
    ========================================= */
 @media (max-width: 900px) {
@@ -901,6 +938,11 @@ a {
 
     .cause-item {
         width: 100%;
+    }
+
+    .bullet-list li {
+        padding-left: 1.2rem;
+        font-size: 1rem;
     }
 
     /* Ensure sticky bar stays compact */
