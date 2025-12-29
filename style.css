@@ -94,11 +94,9 @@ a {
 
 .container {
     width: 100%;
-    /* Changed from 90% for better control */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
-    /* Increased padding */
+    padding: 0 clamp(1rem, 5vw, 1.5rem);
 }
 
 .section {
@@ -226,11 +224,12 @@ a {
 }
 
 .hero-section .headline {
-    /* Significantly reduced sizing for mobile */
-    font-size: clamp(2rem, 7vw, 3.5rem);
+    /* Fluid typography for all screens */
+    font-size: clamp(2rem, 6vw, 3.5rem);
     max-width: 800px;
     margin: 0 auto var(--spacing-sm);
     color: var(--primary-color);
+    line-height: 1.2;
 }
 
 .sub-headline {
@@ -319,11 +318,12 @@ a {
 }
 
 .proof-card {
-    min-width: 280px;
+    min-width: 260px;
+    /* Slightly smaller min-width for better fit */
     max-width: 320px;
     /* Prevent them from getting too huge */
-    flex: 0 0 auto;
-    /* Don't shrink */
+    flex: 1 0 auto;
+    /* Allow flexibility */
     scroll-snap-align: center;
     /* Center on stop */
 
@@ -708,23 +708,16 @@ a {
         text-align: center;
     }
 
-    /* Enforce center titles on mobile */
-
     .bio-content .check-list {
         display: inline-block;
-        /* Make the list itself a block that fits content */
         text-align: left;
-        /* Keep internal text left aligned */
         margin: 0 auto;
-        /* Center the list block */
         max-width: 100%;
     }
 
     .check-list li {
         display: block;
-        /* Stack items normally */
         padding-left: 2rem;
-        /* Keep space for checkmark */
         margin-bottom: 0.8rem;
     }
 
@@ -739,12 +732,7 @@ a {
         --spacing-md: 1.5rem;
     }
 
-    .container {
-        padding: 0 1rem;
-    }
-
     .top-bar .flex-row-center {
-        /* Removed Marquee - Just stack or hide separator */
         justify-content: center;
         white-space: normal;
         gap: 0.5rem;
@@ -754,87 +742,54 @@ a {
         display: none;
     }
 
-    /* Hide dots on mobile */
-
-    @keyframes mobileMarquee {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-50%);
-        }
-    }
-
     .hero-section {
         padding-top: 2rem;
     }
 
-    .container {
-        padding: 0 0.2rem;
-        /* Extreme width optimization */
+    /* Headline adjustment handled by clamp() in base class, 
+       just ensuring line-height is good */
+    .headline {
+        letter-spacing: -0.5px;
     }
 
     .headline br {
         display: none;
     }
 
-    .headline {
-        font-size: 1.35rem !important;
-        /* Drastic reduction for guaranteed fit */
-        line-height: 1.25;
-        width: 100%;
-        padding: 0;
-        letter-spacing: -0.5px;
-    }
-
-    .headline .highlight-alt {
-        white-space: nowrap;
-        /* Force "System Is" to stick together */
-        font-size: 90%;
-        /* Slightly shrink just the accented text to fit */
-    }
-
     .sub-headline {
-        font-size: 0.9rem !important;
-        line-height: 1.4;
-        max-width: 100%;
-        padding: 0;
-        letter-spacing: -0.2px;
-    }
-
-    .sub-headline {
-        font-size: 0.95rem !important;
-        line-height: 1.4;
+        font-size: 1rem;
+        line-height: 1.5;
         max-width: 100%;
         padding: 0 0.5rem;
-        /* Give it a bit more width by reducing padding if needed */
-    }
-
-    .proof-grid {
-        grid-template-columns: 1fr;
     }
 
     .chat-grid {
         width: 100%;
     }
 
+    /* Sticky CTA Optimization for Mobile */
     .sticky-content {
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-direction: row;
+        /* Keep row */
+        justify-content: space-between;
+        /* Space out */
+        align-items: center;
+        gap: 1rem;
     }
 
     .sticky-text {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        /* Prevent wrap */
     }
 
     .small-btn {
-        width: 100%;
-        text-align: center;
+        padding: 0.7rem 1.2rem;
+        white-space: nowrap;
     }
 
     .comparison-block {
-        padding: 0 1rem;
+        padding: 0;
     }
 }
 
@@ -845,13 +800,14 @@ a {
     }
 
     .hero-section {
-        padding-top: 2rem;
+        padding-top: 1.5rem;
     }
 
     .vsl-container.large-vsl {
-        margin: 1.5rem -1rem;
-        border-radius: 0;
-        width: calc(100% + 2rem);
+        margin: 1.5rem 0;
+        /* Removing negative margin which causes overflow issues */
+        border-radius: var(--radius-sm);
+        width: 100%;
         max-width: none;
     }
 
@@ -874,9 +830,17 @@ a {
         width: 100%;
     }
 
-    .headline {
-        font-size: 2.2rem !important;
+    /* Ensure sticky bar stays compact */
+    .sticky-bar {
+        padding: 0.8rem 1rem;
     }
 
-    /* Override clamp slightly if needed */
+    .sticky-text {
+        display: none;
+        /* Hide text on very small screens to focus on action */
+    }
+
+    .sticky-content {
+        justify-content: center;
+    }
 }
