@@ -434,7 +434,7 @@ a {
     gap: 0;
     will-change: transform;
     /* Hardware acceleration hint */
-    animation: marquee-scroll 20s linear infinite;
+    animation: marquee-scroll 12s linear infinite;
 }
 
 .proof-track:hover {
@@ -1227,10 +1227,10 @@ a {
 
     /* Make Rashmi's photo MUCH bigger on mobile */
     .coach-image-placeholder {
-        width: 90%;
-        max-width: 450px;
+        width: 100%;
+        max-width: 500px;
         margin: 0 auto;
-        aspect-ratio: 0.75;
+        aspect-ratio: 0.7;
     }
 
     /* Optimize proof marquee for mobile */
@@ -1240,7 +1240,7 @@ a {
     }
 
     .proof-track {
-        animation: marquee-scroll 18s linear infinite;
+        animation: marquee-scroll 10s linear infinite;
     }
 
     .proof-card {
@@ -1307,7 +1307,8 @@ a {
 
     /* Make Rashmi's photo even bigger on smallest screens */
     .coach-image-placeholder {
-        width: 95%;
+        width: 100%;
         max-width: none;
+        aspect-ratio: 0.8;
     }
 }
