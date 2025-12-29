@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (marquee) {
         let scrollAmount = 0;
         let isUserInteracting = false;
-        const scrollSpeed = 1; // pixels per frame
+        const scrollSpeed = 2.5; // pixels per frame
         const pauseDuration = 3000; // pause for 3 seconds after user interaction
 
         function autoScroll() {
