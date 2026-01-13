@@ -215,61 +215,19 @@ a {
    1. TOP BAR & HERO
    ========================================= */
 .top-bar {
-    background-color: var(--bg-dark);
-    color: var(--secondary-color);
-    padding: 0.5rem 0;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    overflow: hidden;
-    /* For mobile marquee */
+    background-color: #E6E600;
+    /* Vibrant Yellow/Gold similar to image */
+    color: #000;
+    padding: 0.8rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: none;
+    /* Removed uppercase requirement */
+    letter-spacing: 0;
 }
 
-/* Continuous Scrolling Marquee for All Screen Sizes */
-.marquee-container {
-    display: block;
-    overflow: hidden;
-    padding: 0;
-    max-width: 100%;
-    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-}
 
-.marquee-track {
-    display: flex;
-    width: fit-content;
-    gap: 1rem;
-    animation: scroll 20s linear infinite;
-}
-
-.marquee-group {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    flex-shrink: 0;
-    min-width: fit-content;
-    white-space: nowrap;
-}
-
-.marquee-group[aria-hidden="true"] {
-    display: flex;
-    /* Show duplicate for seamless loop */
-}
-
-.mobile-only {
-    display: inline;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
 
 .flex-row-center {
     display: flex;
@@ -1305,6 +1263,7 @@ a {
         aspect-ratio: 0.8;
     }
 }
+
 /* =========================================
    NEW HERO UPDATES
    ========================================= */
@@ -1330,7 +1289,8 @@ a {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     color: var(--primary-color);
-    margin-bottom: 0 !important; /* Override p margin */
+    margin-bottom: 0 !important;
+    /* Override p margin */
 }
 
 .highlight-box {
@@ -1349,7 +1309,8 @@ a {
 
 .highlight-box span {
     display: inline-block;
-    transform: skewX(10deg); /* Un-skew text */
+    transform: skewX(10deg);
+    /* Un-skew text */
 }
 
 @media (max-width: 768px) {
@@ -1357,7 +1318,7 @@ a {
         font-size: 1rem;
         margin-bottom: 0.5rem;
     }
-    
+
     .sub-headline-text {
         font-size: 1.2rem;
     }
