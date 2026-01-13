@@ -239,8 +239,10 @@ a {
 .top-bar {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    padding: 0.8rem 0;
-    font-size: 1rem;
+    padding: 0.5rem 0;
+    /* Reduced from 0.8rem */
+    font-size: 0.85rem;
+    /* Reduced from 1rem */
     font-weight: 700;
     font-style: italic;
     text-transform: none;
@@ -1344,7 +1346,12 @@ a {
     }
 
     .highlight-box {
-        font-size: 1.1rem;
-        padding: 0.4rem 1.5rem;
+        font-size: clamp(0.65rem, 3.5vw, 0.85rem);
+        /* Dynamic size to fit */
+        padding: 0.4rem 0.5rem;
+        /* Reduced horizontal padding */
+        white-space: nowrap;
+        width: auto;
+        max-width: 100%;
     }
 }
