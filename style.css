@@ -1312,7 +1312,7 @@ a {
     font-family: var(--font-body);
     font-weight: 700;
     font-style: italic;
-    color: var(--text-main);
+    color: var(--accent-color);
     margin-bottom: var(--spacing-sm);
     font-size: 1.2rem;
     letter-spacing: -0.02em;
@@ -1329,22 +1329,22 @@ a {
 .sub-headline-text {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: var(--text-muted);
+    color: var(--primary-color);
     margin-bottom: 0 !important; /* Override p margin */
 }
 
 .highlight-box {
-    background-color: #E2F030; /* Vivid Yellow-Green/Highlight */
-    color: #000; /* Black text for contrast */
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     display: inline-block;
     padding: 0.5rem 2rem;
     font-weight: 700;
     font-style: italic;
     font-size: 1.4rem;
     transform: skewX(-10deg);
-    box-shadow: 0 10px 20px -5px rgba(226, 240, 48, 0.4);
+    box-shadow: 0 10px 20px -5px rgba(74, 21, 38, 0.15);
     margin-top: 0.5rem;
-    border-bottom: 3px solid rgba(0,0,0,0.1);
+    border-bottom: 3px solid rgba(74, 21, 38, 0.1);
 }
 
 .highlight-box span {
