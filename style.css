@@ -148,6 +148,23 @@ a {
     transition: width 0.6s, height 0.6s;
 }
 
+.primary-btn {
+    /* Existing basic styles... plus flex */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.cursor-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: #000;
+    stroke: white;
+    stroke-width: 1px;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
 .primary-btn:hover::before {
     width: 300px;
     height: 300px;
@@ -159,21 +176,26 @@ a {
     box-shadow: 0 10px 30px rgba(184, 74, 98, 0.6);
 }
 
-.pulse-anim {
-    animation: pulse 2s infinite;
+.bounce-anim {
+    animation: bounce 2s infinite;
 }
 
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(184, 74, 98, 0.7);
-    }
+@keyframes bounce {
 
-    70% {
-        box-shadow: 0 0 0 10px rgba(184, 74, 98, 0);
-    }
-
+    0%,
+    20%,
+    50%,
+    80%,
     100% {
-        box-shadow: 0 0 0 0 rgba(184, 74, 98, 0);
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
     }
 }
 
